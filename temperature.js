@@ -1,15 +1,22 @@
-"use strict"; // Use ECMAScript 5 strict mode in browsers that support it
+"use strict";
 function calculate() {
   var result;
   var temp = original.value;
-  var regexp = /([-+]?\d+(?:\.\d*)?)\s*([fFcC])/;
+  var regexp = /^\s*([-+]?\d+(?:\.\d+)?)\s*(e[-+]?\d+(?:\.\d+)?)?\s*([fc]|far|(fa)|(ce)|(cel)|(celsius)|(fahrenheit))\s*$/i;
   
   var m = temp.match(regexp);
   
   if (m) {
     var num = m[1];
-    var type = m[2];
+    if(m[3]){
+        var f = m[2];
+        var type = m[3];
+    }else{var type = m[2];}
+    console.log("valor del f: " + f);
+    console.log("valor del type: " + type);
+    console.log("valor del número antes: " + num);
     num = parseFloat(num);
+    console.log("valor del número después: " + num);
     if (type == 'c' || type == 'C') {
       result = (num * 9/5)+32;
       result = result.toFixed(1)+" Farenheit"
@@ -21,6 +28,6 @@ function calculate() {
     converted.innerHTML = result;
   }
   else {
-    converted.innerHTML = "ERROR! Try something like '-4.2C' instead";
+    converted.innerHTML = "¡ERROR! Pruebe algo como '-4.2C' o '37f'";
   }
 }
