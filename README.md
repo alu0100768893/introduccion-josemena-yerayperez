@@ -40,11 +40,11 @@
 
 ### Enlaces José Alberto Mena García:
 + [Repo personal](https://github.com/alu0100768893/introduccion-josemena-yerayperez)
-+ [Práctica en página personal](http://alu0100768893.github.io/DSI/P2/index.html)
++ [Práctica en página personal](http://alu0100768893.github.io/introduccion-josemena-yerayperez/)
 + [Repo de la organización](https://github.com/ULL-ESIT-GRADOII-DSI/introduccion-josemena-yerayperez)
 
 
 ### Enlaces Yeray Pérez Peraza:
 + [Repositorio personal](https://github.com/alu0100768893/introduccion-josemena-yerayperez)
-+ [Práctica en página personal](http://alu0100783612.github.io/DSI/prac2/index.html)
++ [Práctica en página personal](http://alu0100768893.github.io/introduccion-josemena-yerayperez/)
 + [Repositorio de la organización](https://github.com/ULL-ESIT-GRADOII-DSI/introduccion-josemena-yerayperez)
