@@ -2,7 +2,7 @@
 function calculate() {
   var result;
   var temp = original.value;
-  var regexp = /^\s*([-+]?\d+(?:\.\d+)?)\s*(e[-+]?\d+(?:\.\d+)?)?\s*([fc]|far|(fa)|(ce)|(cel)|(celsius)|(fahrenheit))\s*$/i;
+  var regexp = /^\s*([-+]?\d+(?:\.\d+)?)\s*(e[-+]?\d+(?:\.\d+)?)?\s*([fc]|(far)|(fa)|(ce)|(cel)|(celsius)|(fahrenheit))\s*$/i;
 
   var m = temp.match(regexp);
 
@@ -14,10 +14,11 @@ if (m) {
 
         var f = m[2];
         var type = m[3];
+        console.log("el type: " + type);
         num= num.toString()+f.toString();
         num = parseFloat(num);
 
-        if (type == 'c' || type == 'C') {
+        if (type=='c' || type=='C' || type=='ce' || type=='Ce' || type=='cE' || type=='CE' || type=='cel' || type=='Cel' || type=='CEl' || type=='CeL' || type=='cEl' || type=='ceL' || type=='cEL' || type=='CEL') {
           result = (num * 9/5)+32;
           result = result.toFixed(2)+" Farenheit"
         }
@@ -31,8 +32,10 @@ if (m) {
       console.log("no soy exponencial");
 
     num = parseFloat(num);
+    var type = m[3];
+    console.log("el type: " + type);
 
-    if (type == 'c' || type == 'C') {
+    if (type == 'c' || type == 'C' || type=='ce' || type=='Ce' || type=='cE' || type=='CE' || type=='cel' || type=='Cel' || type=='CEl' || type=='CeL' || type=='cEl' || type=='ceL' || type=='cEL' || type=='CEL') {
       result = (num * 9/5)+32;
       result = result.toFixed(2)+" Farenheit"
     }
