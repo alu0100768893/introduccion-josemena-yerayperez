@@ -1,31 +1,43 @@
+<!DOCTYPE html>
 <html>
   <head>
      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-     <title>JavaScript Temperature Converter</title>
+     <title>Conversor de Temperatura JavaScript</title>
      <link href="normalize.css" rel="stylesheet" type="text/css">
      <link href="global.css" rel="stylesheet" type="text/css">
 
      <script type="text/javascript" src="temperature.js"></script>
   </head>
   <body>
-    <h1>Temperature Converter</h1>
+    <h1>Conversor de Temperatura</h1>
     <table>
       <tr>
-        <th>Enter  Temperature (examples: 32F, 45C, -2.5f):</th>
+        <th>Introduzca temperatura:</th>
         <td>
           <form id="formulario" onsubmit="return calculate();">
-          <input id="original" 
-                 placeholder="32F" 
+          <!--form id="formulario"-->
+          <input id="original"
+                 autofocus onchange="calculate();"
+                 placeholder="32F, 45C, -2.5f"
                  size="50"
-                 title = "Escribe un número seguido de una de las letras 'F' o 'C'"
-                 pattern="([-+]?\d+(?:\.\d*)?)\s*([fFcC])"
+                 title = "Escriba una temperatura en grados Celsius o Fahrenheit de la forma: 17F, -31.7c, 17e-2.2CE, -3e2.3fa, -22.7Far o 21e-1.5CEL"
+                 pattern="^\s*([-+]?\d+(?:\.\d+)?)\s*(e[-+]?\d+(?:\.\d+)?)?\s*([fc]|far|(fa)|(ce)|(cel)|(celsius)|(fahrenheit))\s*$"
           />
           </form>
+          <!--form id="formulario">
+          <input id="original"
+                 autofocus onchange="calculate();"
+                 placeholder="32F, 45C, -2.5f"
+                 size="50"
+                 title = "Escriba una temperatura en grados Celsius o Fahrenheit de la forma: 17F, -31.7c, 17e-2.2CE, -3e2.3fa, -22.7Far o 21e-1.5CEL"
+                 pattern="^\s*([-+]?\d+(?:\.\d+)?)\s*(e[-+]?\d+(?:\.\d+)?)?\s*([fc]|far|(fa)|(ce)|(cel)|(celsius)|(fahrenheit))\s*$"
+          />
+        </form-->
         </td>
       </tr>
       <tr>
-        <th>Converted Temperature:</th>
-        <td><span class="output" id="converted"></span></td>
+        <th>Temperatura convertida:</th>
+        <td id="dcha"><span class="output" id="converted"></span></td>
       </tr>
     </table>
   </body>
