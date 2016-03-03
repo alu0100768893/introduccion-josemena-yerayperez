@@ -3,6 +3,7 @@ function calculate() {
   var result;
   var temp = original.value;
   var regexp = /^\s*([-+]?\d+(?:\.\d+)?)\s*(e[-+]?\d+(?:\.\d+)?)?\s*([fc]|(far)|(fa)|(ce)|(cel)|(celsius)|(fahrenheit))\s*$/i;
+  var treg = /^c[a-z]*/i;
 
   var m = temp.match(regexp);
 
@@ -18,7 +19,7 @@ if (m) {
         num= num.toString()+f.toString();
         num = parseFloat(num);
 
-        if (type=='c' || type=='C' || type=='ce' || type=='Ce' || type=='cE' || type=='CE' || type=='cel' || type=='Cel' || type=='CEl' || type=='CeL' || type=='cEl' || type=='ceL' || type=='cEL' || type=='CEL') {
+        if(type.match(treg)){          
           result = (num * 9/5)+32;
           result = result.toFixed(2)+" Farenheit"
         }
@@ -35,7 +36,7 @@ if (m) {
     var type = m[3];
     console.log("el type: " + type);
 
-    if (type == 'c' || type == 'C' || type=='ce' || type=='Ce' || type=='cE' || type=='CE' || type=='cel' || type=='Cel' || type=='CEl' || type=='CeL' || type=='cEl' || type=='ceL' || type=='cEL' || type=='CEL') {
+    if(type.match(treg)){      
       result = (num * 9/5)+32;
       result = result.toFixed(2)+" Farenheit"
     }
